@@ -1,0 +1,15 @@
+<li id="fat-menu" class="dropdown">
+	<%#= link_to link_name, path, class: "dropdown-toggle", "data-toggle" => "dropdown" %>
+    <a href="/news" class="dropdown-toggle" data-toggle="dropdown"> 
+    	<%= link_name %> <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+    	<% sub_links.each do |name| %>
+    		<li><%= link_to name, '/'+name.downcase %> </li>
+    	<% end%>
+    	<li class="divider"></li>
+        <li>
+            <%= link_to link_name, '/'+link_name.downcase, class: "pull-right" %>
+        </li>
+    </ul>
+</li>

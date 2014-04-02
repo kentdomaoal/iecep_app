@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
+#ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.3'
 gem 'bootstrap-sass', '2.3.2.0'
@@ -7,8 +8,6 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
- 
-gem 'pg', '0.15.1'
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '2.1.1'
@@ -17,7 +16,7 @@ gem 'jquery-rails', '3.0.4'
 gem 'jbuilder', '1.0.2'
 
 group :development, :test do
-  #gem 'sqlite3', '1.3.8'
+  gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
 end
 
@@ -39,5 +38,6 @@ group :doc do
 end
 
 group :production do
+  gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
