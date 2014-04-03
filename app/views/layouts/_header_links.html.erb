@@ -1,0 +1,27 @@
+<li id="fat-menu" class="dropdown">
+	<%#= link_to link_name, path, class: "dropdown-toggle", "data-toggle" => "dropdown" %>
+    <a href="/news" class="dropdown-toggle" data-toggle="dropdown"> 
+    	<%= link_name %> <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+    	<% sub_links.each do |name| %>
+            <% if signed_in? %> 
+                <% if name == "Logout"%>
+                  <li><%= link_to name, '/'+name.downcase, method: "delete" %> </li>
+                <% elsif name != "Login" %>
+                  <li><%= link_to name, '/'+name.downcase %> </li>
+                <% end %>
+            <% else %>
+                <% if name != "Logout"%>
+                  <li><%= link_to name, '/'+name.downcase %> </li>
+                <% end %>
+            <% end %>
+        <% end%>
+        <% unless link_name == "Admin"%>
+        	<li class="divider"></li>
+            <li>
+                <%= link_to link_name, '/'+link_name.downcase, class: "pull-right" %>
+            </li>
+        <% end %>
+    </ul>
+</li>

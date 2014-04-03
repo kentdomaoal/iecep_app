@@ -14,6 +14,11 @@
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
       <%= yield %>
+
+      <% unless signed_in? %>
+        <%= render 'layouts/footbar' %>
+      <% end %>
+      <br>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>

@@ -12,7 +12,7 @@
           <%= render_header("About", "Officers,Members")%>
           <li><%= link_to "Contact Us", contact_path %></li>
           <li><%= link_to "Gallery", gallery_path %></li>
-          <li><%= link_to "Admin", admin_path %></li>
+          <%= render_header("Admin", "Login,Logout")%>
         </ul>
       </nav>
     </div>

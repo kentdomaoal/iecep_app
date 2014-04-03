@@ -1,0 +1,13 @@
+<strong><%= @user.name %></strong> | <%= link_to "Edit Profile", edit_user_path(current_user)%>
+<div>
+<%= link_to "Manage Admin", users_path %>
+</div>
+<div>
+<%= link_to "Manage News", news_index_path %>
+</div>
+<div>
+<%= link_to "Manage Events", new_admin_path %>
+</div>
+<div>
+<%= link_to "Manage Gallery", new_admin_path %>
+</div>

@@ -1,0 +1,13 @@
+<h1>All Admins</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @users %>
+</ul>
+
+<%= will_paginate %>
+
+<div>
+<%= link_to "Add Admin", new_admin_path %>
+</div>

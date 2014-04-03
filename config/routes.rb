@@ -1,7 +1,15 @@
 IecepApp::Application.routes.draw do
-  
+  resources :news
+
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   root 'static_pages#home'
   #get "static_pages/home"
+
+  match '/new_admin',   to: 'users#new',            via: 'get'
+  #match '/admin_index', to: 'users#index'           via: 'get'
+  match '/login',       to: 'sessions#new',         via: 'get'
+  match '/logout',      to: 'sessions#destroy',     via: 'delete'
   
   match '/news',        to: 'static_pages#news',        via: 'get'
   match '/events',      to: 'static_pages#events',      via: 'get'
@@ -10,6 +18,4 @@ IecepApp::Application.routes.draw do
   match '/contact',     to: 'static_pages#contact',     via: 'get'
   match '/gallery',     to: 'static_pages#gallery',     via: 'get'
   match '/officers',    to: 'static_pages#officers',    via: 'get'
-  match '/members',     to: 'static_pages#members',     via: 'get'
-  match '/admin',       to: 'static_pages#admin',       via: 'get'
 end

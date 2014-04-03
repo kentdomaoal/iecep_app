@@ -1,26 +1,10 @@
-<div class="column">
-  <aside class="footbar">
-      <h2>Subscribe to NewsLetter</h2>
-  </aside>
-</div>
-<div class="column">
-  <aside class="footbar">
-    <section>
-      <h2>Partners</h2>
-    </section>
-  </aside>
-</div>
-<div class="column">
-  <aside class="footbar">
-    <section>
-      <h2>Follow us</h2>
-    </section>
-  </aside>
-</div>
-<div>
+<br>
+<% if signed_in? %>
+	<%= link_to 'Back to Admin Profile', current_user %>
+<% end %>
+<br><br>
 <footer class="footer">
   <small>
     Copyright 2014 All rights reserved. Maintained by Kent Paul Noel Domaoal
   </small>
 </footer>
-</div>

@@ -1,0 +1,23 @@
+    <% @news.each do |news| %>
+      <br>
+      <div class="news-title">
+        <strong><%= news.title %></strong>       
+      </div>
+      <br>
+      <%= image_tag news.image_url.to_s %>
+      <div class="news-content">
+        <%= simple_format(news.content) %>
+      </div>
+      <% if signed_in? %>
+        <%= link_to 'Edit', edit_news_path(news) %> | 
+        <%= link_to 'Delete', news, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>      
+      <br><br>
+    <% end %>
+
+        <%#= link_to 'Show', news %>
+
+<br>
+<% if signed_in? %>
+<%= link_to 'Add News', new_news_path %>
+<% end %>
