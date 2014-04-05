@@ -1,4 +1,10 @@
 IecepApp::Application.routes.draw do
+  resources :photos
+
+  resources :albums
+
+  resources :events
+
   resources :news
 
   resources :users

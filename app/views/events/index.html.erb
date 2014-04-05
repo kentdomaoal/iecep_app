@@ -1,0 +1,21 @@
+    <% @events.each do |event| %>
+                
+        <div class="title">
+        <br><strong><%= event.name %></strong>
+        </div>
+        <em><%= event.scheduled_on %></em><br><br>
+
+        <%= simple_format(event.content) %><br>
+        <%#= link_to 'Show', event %>
+
+        <% if signed_in? %>
+          <%= link_to 'Edit', edit_event_path(event) %> |
+          <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+    <% end %>
+
+<br><br>
+<% if signed_in? %>
+  <%= link_to 'New Event', new_event_path %>
+<% end %>
+

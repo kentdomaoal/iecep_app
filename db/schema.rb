@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403043656) do
+ActiveRecord::Schema.define(version: 20140404110717) do
+
+  create_table "albums", force: true do |t|
+    t.string   "name"
+    t.date     "compiled_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.date     "scheduled_on"
+    t.string   "event_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "news", force: true do |t|
     t.string   "title"
@@ -19,6 +35,14 @@ ActiveRecord::Schema.define(version: 20140403043656) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+  end
+
+  create_table "photos", force: true do |t|
+    t.string   "caption"
+    t.string   "image"
+    t.integer  "album_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

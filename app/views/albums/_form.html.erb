@@ -1,0 +1,32 @@
+<%= form_for(@album) do |f| %>
+  <% if @album.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
+
+      <ul>
+      <% @album.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :compiled_on %><br>
+    <%= f.text_field :compiled_on %>
+  </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#album_compiled_on').datepicker();
+  })
+</script>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

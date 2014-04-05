@@ -1,0 +1,22 @@
+<h1>Gallery</h1> 
+    <% album_id = 0 %>
+    <% @albums.each do |album| %>
+        <br><br>      
+        <% album.photos.each do |photo| %>
+          <%= image_tag photo.image_url if album_id != photo.album_id %>
+          <% album_id = photo.album_id %>
+        <% end %><br>
+        <%= link_to album.name, album %><br>
+        <%= album.compiled_on %><br>
+        
+        <% if signed_in? %>
+          <%= link_to 'Edit', edit_album_path(album) %> |
+          <%= link_to 'Delete', album, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+    <% end %>
+
+
+<br><br>
+<% if signed_in? %>  
+  <%= link_to 'New Album', new_album_path %>
+<% end %>
